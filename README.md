@@ -7,9 +7,13 @@
 ## How to use 如何使用
 在對應的輸入欄位輸入數值並按下 "計算" 按鈕即可獲得結果
 
+> [!warning]
+> 若無法輸入小數點，請切換輸入法再試試看
+
 ## Input explanation 輸入欄位解釋
 
-⚠️ 物理強度加成、護甲穿透以及傷害減免欄位請輸入小數
+> [!IMPORTANT]
+> 物理強度加成、護甲穿透以及傷害減免欄位請輸入小數
 
 武器傷害(Weapon Damage)： 武器的基礎傷害
 
@@ -52,8 +56,8 @@
 * Projectile Falloff
 + True Damage
 ```
-
-⚠️ 此公式為 wiki 提供，與遊戲內翻譯不同，各變數解釋請參考 wiki
+> [!note]
+> 此公式為 wiki 提供，與遊戲內翻譯不同，各變數解釋請參考 wiki
 
 [公式詳解 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage>)
 
