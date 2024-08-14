@@ -1,8 +1,12 @@
 # dark-and-darker-damage-calculater
 
 ## How to download 如何下載
-點擊右側 Releases 下載最新版本
-打開程式即可使用
+點擊右側 Releases 下載最新版本的 dndDmgCalculater
+
+下載完成後打開程式即可使用
+
+![image](https://github.com/user-attachments/assets/adbdc135-bcac-4e90-9cde-0ecd506b143c)
+
 
 ## How to use 如何使用
 在對應的輸入欄位輸入數值並按下 "計算" 按鈕即可獲得結果
