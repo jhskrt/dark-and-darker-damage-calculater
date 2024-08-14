@@ -23,11 +23,11 @@
 
 受擊部位(Hit Location)： 打頭造成 1.5x 、身體 1.0x 、手臂0.8x 、腿0.6x 、手/腳 0.5x 傷害
 
-物理(魔法)強度加成(Physical Power Bonus)： 可以直接由角色細則查看，此數值受力量(意志)、物理(魔法)強度以及物理(魔法)傷害加成影響，其中1力量(意志) = 1物理(魔法)強度，物理強度：物理強度加成請參考 [wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
+物理(魔法)強度加成(Physical Power Bonus)： 可以直接由角色細則查看，此數值受力量(意志)、物理(魔法)強度以及物理(魔法)傷害加成影響，其中1力量(意志) = 1物理(魔法)強度，物理強度：物理強度加成請參考 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
 
 ![image](https://github.com/user-attachments/assets/7adae393-d79c-40ad-9918-6da0c4c36cb2)
 
-魔法強度：魔法強度加成請參考 [wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Magical_Power>)
+魔法強度：魔法強度加成請參考 [魔法強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Magical_Power>)
 
 ![image](https://github.com/user-attachments/assets/fa1396af-2520-4f95-bd8f-cdd381bf7f89)
 
@@ -37,7 +37,10 @@
 
 額外武器傷害(Addition Weapon Damage)： 武器詞條提供的額外武器傷害
 
-物理傷害減免/魔法抗性(Physical Damage Reduction/Magic Resistance)： 由護甲值和裝備詞條決定的物理傷害減免，可以直接由角色細則查看，護甲值：傷害減免請參考 [wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Armor_Rating>)
+物理傷害減免/魔法抗性(Physical Damage Reduction/Magic Resistance)： 由護甲值和裝備詞條決定的物理傷害減免，可以直接由角色細則查看，護甲值：傷害減免請參考 [護甲值 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Armor_Rating>)
+
+> [!note]
+> 假人的物抗是-22% 魔抗5%，其他怪物雙防請參考 [怪物 wiki](https://darkanddarker.wiki.spellsandguns.com/Monsters#Dummy)
 
 ## Damage Formula 傷害公式
 ```
@@ -63,7 +66,7 @@
 > [!note]
 > 此公式為 wiki 提供，與遊戲內翻譯不同，各變數解釋請參考 wiki
 
-[公式詳解 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage>)
+[傷害公式 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage>)
 
 ## Source 資料來源
 
@@ -79,7 +82,7 @@ A1 : 歡迎發 Issues 討論
 
 Q2 : 算出來的傷害怎麼會有小數點?
 
-A2 : 遊戲內傷害跟生命都有小數點，只是顯示會取整數而已，生命值無條件進位，假人傷害無條件捨去，請參考 [wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage#Rounding>)
+A2 : 遊戲內傷害跟生命都有小數點，只是顯示會取整數而已，生命值無條件進位，假人傷害無條件捨去，請參考 [四捨五入 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage#Rounding>)
 
 
 
