@@ -53,6 +53,8 @@
 + True Damage
 ```
 
+⚠️ 此公式為 wiki 提供，與遊戲內翻譯不同，各變數解釋請參考 wiki
+
 [公式詳解 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage>)
 
 ## Source 資料來源
