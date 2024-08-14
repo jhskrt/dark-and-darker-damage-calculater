@@ -39,6 +39,7 @@ def calculate_damage():
 
         last_result.append(damage)
         label_result.config(text=f"計算結果(前次結果): {damage}({last_result[-2]})")
+        last_result.pop(0)
     
     except ValueError:
         label_result.config(text="輸入格式錯誤!")
@@ -62,7 +63,7 @@ entry_hit_location_bonus = tk.Entry(root)
 entry_hit_location_bonus.insert(0, 1.5)
 entry_hit_location_bonus.grid(row=2, column=1)
 
-tk.Label(root, text="物理強度加成(暫不支援魔法強度):").grid(row=3, column=0)
+tk.Label(root, text="物理(魔法)強度加成:").grid(row=3, column=0)
 entry_power_bonus = tk.Entry(root)
 entry_power_bonus.insert(0, 0)
 entry_power_bonus.grid(row=3, column=1)
@@ -77,7 +78,7 @@ entry_true_damage = tk.Entry(root)
 entry_true_damage.insert(0, 0)
 entry_true_damage.grid(row=5, column=1)
 
-tk.Label(root, text="護甲穿透:").grid(row=6, column=0)
+tk.Label(root, text="護甲(魔法)穿透:").grid(row=6, column=0)
 entry_penetration = tk.Entry(root)
 entry_penetration.insert(0, 0)
 entry_penetration.grid(row=6, column=1)
@@ -87,7 +88,7 @@ entry_gear_weapon_damage = tk.Entry(root)
 entry_gear_weapon_damage.insert(0, 0)
 entry_gear_weapon_damage.grid(row=7, column=1)
 
-tk.Label(root, text="物理(魔法)傷害減免:").grid(row=8, column=0)
+tk.Label(root, text="物理傷害減免/魔法抗性:").grid(row=8, column=0)
 entry_damage_reduction = tk.Entry(root)
 entry_damage_reduction.insert(0, 0)
 entry_damage_reduction.grid(row=8, column=1)
