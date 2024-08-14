@@ -4,27 +4,27 @@ last_result = [0]
 def calculate_damage():
     try:
         # 傷害
-        base_damage = float(entry_base_damage.get())
-        power_bonus = float(entry_power_bonus.get()) # 物理強度
-        additional_damage = float(entry_additional_damage.get())   # 額外傷害
-        true_damage = float(entry_true_damage.get()) # 真實傷害
-        penetration = float(entry_penetration.get()) # 護甲傷害
+        base_damage = float(entry_base_damage.get()) # 武器基礎傷害
+        power_bonus = float(entry_power_bonus.get()) # 物理強度加成
+        additional_damage = float(entry_additional_damage.get())   # 額外物理(魔法)傷害
+        true_damage = float(entry_true_damage.get()) # 真實外物理(魔法)傷害
+        penetration = float(entry_penetration.get()) # 護甲穿透
         gear_weapon_damage = float(entry_gear_weapon_damage.get()) # 額外武器傷害
 
-        hit_location_bonus = float(entry_hit_location_bonus.get()) # 受擊部位
-        buff_weapon_damage = 0.0
+        hit_location_bonus = float(entry_hit_location_bonus.get()) # 受擊部位 頭1.5 身1.0 臂.8 腿.6 手/腳.5
+        buff_weapon_damage = 0.0 # 天賦影響的加成(詩人戰歌等)
 
         # 減傷
         damage_reduction = float(entry_damage_reduction.get())
-        damage_reduction_mod = 1.0
+        damage_reduction_mod = 1.0 # i have no idea what is this
 
-        projectile_reduction = 0.0
-        projectile_falloff = 1.0
+        projectile_reduction = 0.0 # 飛行物傷害減免
+        projectile_falloff = 1.0   # 飛行物距離衰減
         
         # 雜項
-        combo_multiplier = 1.0
-        impact_zone_multiplier = 1.0
-        divine_strike_damage = 0.0
+        combo_multiplier = 1.0 # 連擊獎勵
+        impact_zone_multiplier = 1.0 # 武器打擊區域
+        divine_strike_damage = 0.0 # 牧師技能神擊
 
         damage = (
             (
