@@ -1,5 +1,11 @@
 # dark-and-darker-damage-calculater
 
+## How to use it online 如何使用網頁版
+
+🔽點擊連結即可使用🔽
+
+[Dark and Darker 傷害計算器網頁版](<https://jhskrt.github.io/dark-and-darker-damage-calculater/>)
+
 ## How to download 如何下載
 點擊右側 Releases 下載最新版本的 dndDmgCalculater
 
