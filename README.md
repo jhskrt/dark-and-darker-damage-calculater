@@ -100,9 +100,7 @@
 
 1. 此計算器尚不支援計算混傷類型的武器，即魔法武器傷害，如:魔鬼的喜悅、水晶劍等等
 
-2. 法師的"點燃"技能並不
-
-3. 遊戲中當你攻擊假人(Dummy)時，傷害始終無條件捨去小數點，在玩家頁面上則始終四捨五入，小於1的數會無條件顯示1 [四捨五入 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage#Rounding>)
+2. 遊戲中當你攻擊假人(Dummy)時，傷害始終無條件捨去小數點，在玩家頁面上則始終四捨五入，小於1的數會無條件顯示1 [四捨五入 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage#Rounding>)
 
 ## Source 資料來源
 
