@@ -1,5 +1,45 @@
 let lastResult = 0;
 
+function calculatePhysicalPowerBonus(physicalPower) {
+    let bonus = -0.8; // Start at -80%
+    if (physicalPower > 0) {
+        if (physicalPower <= 5) {
+            bonus += physicalPower * 0.1;
+        } else if (physicalPower <= 7) {
+            bonus += 0.5 + (physicalPower - 5) * 0.05;
+        } else if (physicalPower <= 11) {
+            bonus += 0.6 + (physicalPower - 7) * 0.03;
+        } else if (physicalPower <= 15) {
+            bonus += 0.72 + (physicalPower - 11) * 0.02;
+        } else if (physicalPower <= 50) {
+            bonus += 0.8 + (physicalPower - 15) * 0.01;
+        } else {
+            bonus += 1.15 + (physicalPower - 50) * 0.005;
+        }
+    }
+    return bonus;
+}
+
+function calculateMagicPowerBonus(magicPower) {
+    let bonus = -0.9; // Start at -90%
+    if (magicPower > 0) {
+        if (magicPower <= 5) {
+            bonus += (magicPower - 1) * 0.1;
+        } else if (magicPower <= 15) {
+            bonus += 0.4 + (magicPower - 5) * 0.05;
+        } else if (magicPower <= 21) {
+            bonus += 0.9 + (magicPower - 15) * 0.025;
+        } else if (magicPower <= 40) {
+            bonus += 1.05 + (magicPower - 21) * 0.02;
+        } else if (magicPower <= 50) {
+            bonus += 1.43 + (magicPower - 40) * 0.01;
+        } else {
+            bonus += 1.53 + (magicPower - 50) * 0.005;
+        }
+    }
+    return bonus;
+}
+
 function calculateDamage() {
     try {
         // Get input values
