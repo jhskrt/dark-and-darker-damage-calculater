@@ -23,7 +23,9 @@
 
 `受擊部位(Hit Location)`： 打頭造成 1.5x 、身體 1.0x 、手臂0.8x 、腿0.6x 、手/腳 0.5x 傷害
 
-`物理(魔法)強度加成(Physical Power Bonus)`： 可以直接由角色細則查看，此數值受力量(意志)、物理(魔法)強度以及物理(魔法)傷害加成影響，其中1力量(意志) = 1物理(魔法)強度，物理強度：物理強度加成請參考 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
+`物理/魔法強度加成(Physical Power Bonus)`： 可以直接由角色細則查看，此數值受力量/意志、物理/魔法強度以及物理/魔法傷害加成影響，其中1力量/意志 = 1物理/魔法強度
+
+`物理強度`：物理強度加成請參考 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
 
 ![image](https://github.com/user-attachments/assets/7adae393-d79c-40ad-9918-6da0c4c36cb2)
 
