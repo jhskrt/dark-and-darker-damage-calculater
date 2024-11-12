@@ -44,6 +44,40 @@ def calculate_damage():
     except ValueError:
         label_result.config(text="輸入格式錯誤!")
 
+def calculate_physical_power_bonus(physical_power):
+    bonus = -0.8  # Start at -80%
+    if physical_power > 0:
+        if physical_power <= 5:
+            bonus += physical_power * 0.1
+        elif physical_power <= 7:
+            bonus += 0.5 + (physical_power - 5) * 0.05
+        elif physical_power <= 11:
+            bonus += 0.6 + (physical_power - 7) * 0.03
+        elif physical_power <= 15:
+            bonus += 0.72 + (physical_power - 11) * 0.02
+        elif physical_power <= 50:
+            bonus += 0.8 + (physical_power - 15) * 0.01
+        else:
+            bonus += 1.15 + (physical_power - 50) * 0.005
+    return bonus
+
+def calculate_magic_power_bonus(magic_power):
+    bonus = -0.9  # Start at -90%
+    if magic_power > 0:
+        if magic_power <= 5:
+            bonus += (magic_power - 1) * 0.1
+        elif magic_power <= 15:
+            bonus += 0.4 + (magic_power - 5) * 0.05
+        elif magic_power <= 21:
+            bonus += 0.9 + (magic_power - 15) * 0.025
+        elif magic_power <= 40:
+            bonus += 1.05 + (magic_power - 21) * 0.02
+        elif magic_power <= 50:
+            bonus += 1.43 + (magic_power - 40) * 0.01
+        else:
+            bonus += 1.53 + (magic_power - 50) * 0.005
+    return bonus
+
 root = tk.Tk()
 root.title("Damage Calculator")
 
