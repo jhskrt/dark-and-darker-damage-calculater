@@ -40,7 +40,7 @@
 物理傷害減免/魔法抗性(Physical Damage Reduction/Magic Resistance)： 由護甲值和裝備詞條決定的物理傷害減免，可以直接由角色細則查看，護甲值：傷害減免請參考 [護甲值 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Armor_Rating>)
 
 > [!note]
-> 假人的物抗是-22% 魔抗5%，其他怪物雙防請參考 [怪物 wiki](https://darkanddarker.wiki.spellsandguns.com/Monsters#Dummy)
+> 假人(Dummy)的物抗是-12% 魔抗-20%，其他怪物雙防請參考 [怪物 wiki](https://darkanddarker.wiki.spellsandguns.com/Monsters#Dummy)
 
 ## Damage Formula 傷害公式
 ```
