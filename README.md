@@ -1,5 +1,11 @@
 # dark-and-darker-damage-calculater
 
+## How to use it online 如何使用網頁版
+
+🔽點擊連結即可使用🔽
+
+[Dark and Darker 傷害計算器網頁版](<https://jhskrt.github.io/dark-and-darker-damage-calculater/>)
+
 ## How to download 如何下載
 點擊右側 Releases 下載最新版本的 dndDmgCalculater
 
@@ -23,13 +29,13 @@
 
 `受擊部位(Hit Location)`： 打頭造成 1.5x 、身體 1.0x 、手臂0.8x 、腿0.6x 、手/腳 0.5x 傷害
 
-`物理/魔法強度加成(Physical Power Bonus)`： 可以直接由角色細則查看，此數值受力量/意志、物理/魔法強度以及物理/魔法傷害加成影響，其中1力量/意志 = 1物理/魔法強度
+`物理/魔法強度加成(Physical Power Bonus)`： 可以直接由角色細則查看，由力量/意志、物理/魔法強度和物理/魔法傷害加成影響
 
-`物理強度`：物理強度加成請參考 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
+ - 物理強度與物理強度加成的關係參考下圖 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
 
 ![image](https://github.com/user-attachments/assets/7adae393-d79c-40ad-9918-6da0c4c36cb2)
 
-`魔法強度`：魔法強度加成請參考 [魔法強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Magical_Power>)
+ - 魔法強度與魔法強度加成的關係參考下圖 [魔法強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Magical_Power>)
 
 ![image](https://github.com/user-attachments/assets/fa1396af-2520-4f95-bd8f-cdd381bf7f89)
 
@@ -65,10 +71,38 @@
 * Projectile Falloff
 + True Damage
 ```
+```
+(
+  (
+    (
+        + (基礎傷害 + 有關武器傷害的增益) * 連擊加乘 * 武器打擊區域加乘
+        + 額外武器傷害|額外魔法武器傷害
+        + 神擊(牧師法術)傷害
+    )
+    * (1 + 物理(魔法)強度加成)
+    + 額外物理(魔法)傷害
+  )
+  * (1 + 四肢傷害加成)
+  * (1 + 種族(不死族and惡魔)傷害加成)
+  * (1 - 種族(不死族and惡魔)傷害減免)
+  * (1 - 物理(魔法)傷害減免 * (1 + 物理(魔法)傷害減免模組) * (1 - 護甲(魔法)穿透))
+  * (1 - 飛行物傷害減免)
+)
+* 飛行物傷害衰減
++ 真實物理魔法傷害
+```
 > [!note]
 > 此公式為 wiki 提供，與遊戲內翻譯不同，各變數解釋請參考 wiki
 
 [傷害公式 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage>)
+
+## You must know 須知
+
+1. 此計算器尚不支援計算混傷類型的武器，即魔法武器傷害，如:魔鬼的喜悅、水晶劍等等
+
+2. 遊戲中當你攻擊假人(Dummy)時，傷害始終無條件捨去小數點，在玩家頁面上的數值則始終四捨五入，小於1的數會無條件顯示1 [四捨五入 wiki](<https://darkanddarker.wiki.spellsandguns.com/Damage#Rounding>)
+
+3. 遊戲中你在手拿武器時可以打開角色細則查看傷害數值
 
 ## Source 資料來源
 
