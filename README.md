@@ -14,8 +14,14 @@
 ![image](https://github.com/user-attachments/assets/adbdc135-bcac-4e90-9cde-0ecd506b143c)
 
 
-## How to use 如何使用
-在對應的輸入欄位輸入數值並按下 "計算" 按鈕即可獲得結果
+## How to use web version 如何使用網頁版
+1. 先選擇物理傷害模式或魔法傷害模式
+2. 輸入想計算的數值
+3. 點擊計算
+
+## How to use app version 如何使用下載版
+1. 輸入想計算的數值
+2. 點擊計算
 
 > [!warning]
 > 若無法輸入小數點，請切換輸入法再試試看
@@ -25,11 +31,17 @@
 > [!IMPORTANT]
 > 物理強度加成、護甲穿透以及傷害減免欄位請輸入小數
 
-`武器傷害(Weapon Damage)`： 武器的基礎傷害 + 天賦給的武器傷害(詩人西洋劍精通、戰歌、野蠻人斧頭專精等等)
+`武器/法術傷害(Base Damage)`： 武器的基礎傷害 + 天賦給的武器傷害(詩人西洋劍精通、戰歌、野蠻人斧頭專精等等) 或是法術的基礎傷害
 
 `受擊部位(Hit Location)`： 打頭造成 1.5x 、身體 1.0x 、手臂0.8x 、腿0.6x 、手/腳 0.5x 傷害
 
-`物理/魔法強度加成(Physical Power Bonus)`： 可以直接由角色細則查看，由力量/意志、物理/魔法強度和物理/魔法傷害加成影響
+`法術縮放(Scaling)`： 法術傷害後面括號的數字 例如: 電擊傷害 20(0.75) 0.75代表法術縮放 [法術縮放 wiki](<https://darkanddarker.wiki.spellsandguns.com/Scaling>)
+
+`力量/意志(strength/will)`： 角色的屬性值 1力量 = 1物理強度，1意志 = 1魔法強度
+
+`物理/魔法強度(Physical/magical Power)`： 由裝備詞條`物理/魔法強度(遊戲內翻譯)`提供的物理/魔法強度 並照圖表轉換成傷害加成再帶入公式計算
+
+`物理/魔法傷害加成(Physical/magical Power Bonus)`： 由裝備詞條[物理/魔法傷害加成(遊戲內翻譯)]提供的傷害加成
 
  - 物理強度與物理強度加成的關係參考下圖 [物理強度 wiki](<https://darkanddarker.wiki.spellsandguns.com/Stats#Physical_Power>)
 
