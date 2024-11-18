@@ -128,8 +128,41 @@ function setMode(index) {
     }
 }
 
+function validateInputs() {
+    // Get input values
+    const penetration = parseFloat(document.getElementById('penetration').value);
+    const damageReduction = parseFloat(document.getElementById('damage_reduction').value);
+    const scaling = parseFloat(document.getElementById('scaling').value);
+
+    let errorMessages = [];
+
+    // Check penetration (0-1)
+    if (penetration < 0 || penetration > 1) {
+        errorMessages.push("護甲/魔法穿透必須在 0 到 1 之間");
+    }
+
+    // Check damage reduction (0-1)
+    if (damageReduction < 0 || damageReduction > 1) {
+        errorMessages.push("傷害減免/魔法抗性必須在 0 到 1 之間");
+    }
+
+    // Check scaling (0-1)
+    if (scaling < 0 || scaling > 1) {
+        errorMessages.push("法術縮放必須在 0 到 1 之間");
+    }
+
+    return errorMessages;
+}
+
 function calculateDamage() {
     try {
+        // Validate inputs first
+        const errors = validateInputs();
+        if (errors.length > 0) {
+            document.getElementById('result').textContent = `輸入錯誤: ${errors.join(', ')}`;
+            return;
+        }
+
         // Get input values
         const baseDamage = parseFloat(document.getElementById('base_damage').value);
         const scaling = parseFloat(document.getElementById('scaling').value);
