@@ -140,6 +140,8 @@ A3 : 那應該是我寫錯了，本程式並沒有經過嚴謹的驗算和證實
 
 ## Update Log 更新日誌
 
-V1.0.0 update physical damage formula 
+V1.0.0 Update physical damage formula 
 
-V2.0.0 update magic damage formula
+V2.0.0 Update magic damage formula
+
+V2.0.1 Added that if the input format is incorrect, an error will be displayed
