@@ -11,19 +11,30 @@
 <body>
     <div class="container">
         <h1>Dark and Darker 傷害計算器</h1>
-
+        
         <div class="notice">
-            目前因為魔法強度計算與物理強度計算方法不同<br>
-            因此魔法強度計算會有誤差 但結果還是可以參考<br>
+            法術傷害會受到<a href="https://darkanddarker.wiki.spellsandguns.com/Scaling">縮放</a>影響<br>
+            請到遊戲內查詢或是參考 <a href="https://darkanddarker.wiki.spellsandguns.com/Damage_Types#Magical_Elements">官方維基</a><br>
             各個欄位解釋請參考 <a href="https://github.com/jhskrt/dark-and-darker-damage-calculater">Dark and Darker 傷害計算器</a>
+        </div>
+
+        <!-- Mode Switch Buttons -->
+        <div class="mode-buttons">
+            <button onclick="setMode(0)">物理傷害</button>
+            <button onclick="setMode(1)">魔法傷害</button>
         </div>
 
         <div class="calculator">
             <div class="input-group">
-                <label for="base_damage">武器傷害:</label>
+                <label id="damage" for="base_damage">武器傷害:</label>
                 <input type="number" id="base_damage" onmouseover="this.title='請輸入武器傷害'" value="1" step="any">
             </div>
-
+            
+            <div class="input-group">
+                <label for="gear_weapon_damage">額外武器傷害:</label>
+                <input type="number" id="gear_weapon_damage" value="0" step="1">
+            </div>
+            
             <div class="input-group">
                 <label for="hit_location_bonus">受擊部位:</label>
                 <select id="hit_location_bonus">
@@ -36,28 +47,52 @@
             </div>
 
             <div class="input-group">
-                <label for="power_bonus">物理(魔法)強度加成:</label>
-                <input type="number" 
-                    id="power_bonus" 
-                    onmouseover="this.title='請輸入0~1的數值'" 
-                    value="0" 
-                    step="0.01" 
-                    min="0"
-                    max="1">
+                <label for="scaling">法術縮放</label>
+                <input type="number" id="scaling" value="1" step="0.05" min="0" max="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="strength">力量:</label>
+                <input type="number" id="strength" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="physical_power">物理強度:</label>
+                <input type="number" id="physical_power" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="physical_power_bonus">物理強度加成:</label>
+                <input type="number" id="physical_power_bonus" value="0" step="0.01" min="0" max="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="will">意志:</label>
+                <input type="number" id="will" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic_power">魔法強度:</label>
+                <input type="number" id="magic_power" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic_power_bonus">魔法強度加成:</label>
+                <input type="number" id="magic_power_bonus" value="0" step="0.01" min="0" max="1">
             </div>
 
             <div class="input-group">
-                <label for="additional_damage">額外物理(魔法)傷害:</label>
-                <input type="number" id="additional_damage" value="0" step="1">
+                <label id="additional_damage_label" for="additional_damage">額外物理(魔法)傷害:</label>
+                <input type="number" id="additional_damage" value="0" step="1" min="0">
             </div>
 
             <div class="input-group">
-                <label for="true_damage">真實物理(魔法)傷害:</label>
-                <input type="number" id="true_damage" value="0" step="1">
+                <label id="true_damage_label" for="true_damage">真實物理(魔法)傷害:</label>
+                <input type="number" id="true_damage" value="0" step="1" min="0">
             </div>
 
             <div class="input-group">
-                <label for="penetration">護甲(魔法)穿透:</label>
+                <label id="penetration_label" for="penetration">護甲(魔法)穿透:</label>
                 <input type="number" 
                     id="penetration" 
                     onmouseover="this.title='請輸入0~1的數值'" 
@@ -67,13 +102,9 @@
                     max="1">
             </div>
 
-            <div class="input-group">
-                <label for="gear_weapon_damage">額外武器傷害:</label>
-                <input type="number" id="gear_weapon_damage" value="0" step="1">
-            </div>
 
             <div class="input-group">
-                <label for="damage_reduction">物理傷害減免/魔法抗性:</label>
+                <label id="damage_reduction_label" for="damage_reduction">物理傷害減免/魔法抗性:</label>
                 <input type="number" 
                     id="damage_reduction" 
                     onmouseover="this.title='請輸入0~1的數值'" 
@@ -84,6 +115,10 @@
             </div>
 
             <button onclick="calculateDamage()">計算</button>
+
+            <div id="mode" class="mode">
+                當前模式: 物理傷害計算
+            </div>
 
             <div id="result" class="result">
                 計算結果(前次結果):
