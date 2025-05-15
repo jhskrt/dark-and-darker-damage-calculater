@@ -216,7 +216,7 @@ function calculateDamage() {
 
         // Update result display
         const resultElement = document.getElementById('result');
-        resultElement.textContent = `計算結果(前次結果): ${damage.toFixed(2)}(${lastResult.toFixed(2)})`;
+        resultElement.textContent = `計算結果(前次結果): ${damage.toFixed(4)}(${lastResult.toFixed(4)})`;
         lastResult = damage;
 
     } catch (error) {
