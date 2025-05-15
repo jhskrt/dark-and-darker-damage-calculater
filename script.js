@@ -179,7 +179,7 @@ function calculateDamage() {
 
         // Constants
         const buffWeaponDamage = 0.0;
-        const damageReductionMod = 1.0;
+        const damageReductionMod = 0.0;
         const projectileReduction = 0.0;
         const projectileFalloff = 1.0;
         const comboMultiplier = 1.0;
