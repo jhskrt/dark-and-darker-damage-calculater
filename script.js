@@ -3,43 +3,47 @@ let modes = ["物理傷害計算", "魔法傷害計算"];
 let currentModeIndex = 0;
 
 function calculatePhysicalPowerBonus(physicalPower) {
-    let bonus = -0.8; // Start at -80%
-    if (physicalPower > 0) {
-        if (physicalPower <= 5) {
-            bonus += physicalPower * 0.1;
-        } else if (physicalPower <= 7) {
-            bonus += 0.5 + (physicalPower - 5) * 0.05;
-        } else if (physicalPower <= 11) {
-            bonus += 0.6 + (physicalPower - 7) * 0.03;
-        } else if (physicalPower <= 15) {
-            bonus += 0.72 + (physicalPower - 11) * 0.02;
-        } else if (physicalPower <= 50) {
-            bonus += 0.8 + (physicalPower - 15) * 0.01;
-        } else {
-            bonus += 1.15 + (physicalPower - 50) * 0.005;
+    if (physicalPower <= 0) return -0.8;
+
+    const brackets = [
+        { min: 0,  max: 5,   baseBonus: -0.8,  rate: 0.1 },
+        { min: 5,  max: 7,   baseBonus: -0.3,  rate: 0.05 },
+        { min: 7,  max: 11,  baseBonus: -0.2,  rate: 0.03 },
+        { min: 11, max: 15,  baseBonus: -0.08, rate: 0.02 },
+        { min: 15, max: 50,  baseBonus: 0.0,   rate: 0.01 },
+        { min: 50, max: 60,  baseBonus: 0.35,   rate: 0.005 },
+        { min: 60, max: 100, baseBonus: 0.5, rate: 0.0025 },
+    ];
+
+    for (const bracket of brackets) {
+        if (physicalPower <= bracket.max) {
+            return bracket.baseBonus + (physicalPower - bracket.min) * bracket.rate;
         }
     }
-    return bonus;
+
+    return -0.8; // fallback, should never hit
 }
 
 function calculateMagicPowerBonus(magicPower) {
-    let bonus = -0.9; // Start at -90%
-    if (magicPower > 0) {
-        if (magicPower <= 5) {
-            bonus += (magicPower - 1) * 0.1;
-        } else if (magicPower <= 15) {
-            bonus += 0.4 + (magicPower - 5) * 0.05;
-        } else if (magicPower <= 21) {
-            bonus += 0.9 + (magicPower - 15) * 0.025;
-        } else if (magicPower <= 40) {
-            bonus += 1.05 + (magicPower - 21) * 0.02;
-        } else if (magicPower <= 50) {
-            bonus += 1.43 + (magicPower - 40) * 0.01;
-        } else {
-            bonus += 1.53 + (magicPower - 50) * 0.005;
+    if (magicPower <= 0) return -0.8;
+
+    const brackets = [
+        { min: 0,  max: 5,   baseBonus: -0.8,  rate: 0.1 },
+        { min: 5,  max: 7,   baseBonus: -0.3,  rate: 0.05 },
+        { min: 7,  max: 11,  baseBonus: -0.2,  rate: 0.03 },
+        { min: 11, max: 15,  baseBonus: -0.08, rate: 0.02 },
+        { min: 15, max: 50,  baseBonus: 0.0,   rate: 0.01 },
+        { min: 50, max: 60,  baseBonus: 0.35,   rate: 0.005 },
+        { min: 60, max: 100, baseBonus: 0.5, rate: 0.0025 },
+    ];
+
+    for (const bracket of brackets) {
+        if (magicPower <= bracket.max) {
+            return bracket.baseBonus + (magicPower - bracket.min) * bracket.rate;
         }
     }
-    return bonus;
+
+    return -0.8; // fallback, should never hit
 }
 
 function updatePhysicalPower() {
@@ -53,7 +57,7 @@ function updatePhysicalPower() {
 
 function updateMagicPower() {
     const will = parseFloat(document.getElementById('will').value);
-    const magicPower = will; // 假設 1意志 = 1魔法強度
+    const magicPower = will; // 1意志 = 1魔法強度
     document.getElementById('magic_power').value = magicPower;
 
     const magicPowerBonus = calculateMagicPowerBonus(magicPower);
